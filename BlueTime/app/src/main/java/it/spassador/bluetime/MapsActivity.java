@@ -1,41 +1,41 @@
 package it.spassador.bluetime;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridView;
-import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.airbnb.android.airmapview.AirMapMarker;
+import com.airbnb.android.airmapview.AirMapView;
+import com.google.android.gms.maps.model.LatLng;
 
 
-public class MainActivity extends ActionBarActivity {
-    GridView mGridView;
-    ImageButton mImageButton;
+public class MapsActivity extends ActionBarActivity {
+    AirMapView mapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_maps);
 
-        mGridView = (GridView) findViewById(R.id.gridView);
-        mImageButton = (ImageButton) findViewById(R.id.imageButton);
+        mapView = (AirMapView) findViewById(R.id.map_view);
+        try {
+            mapView.initialize(getSupportFragmentManager());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        mImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
+        // Need small icon
+        // Need that the map is initialized
+        mapView.addMarker(new AirMapMarker(new LatLng(45.434561, 12.339712d), 1)
+                .setTitle("San Marco, Venezia")
+                .setIconId(R.drawable.icon_location_pin));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_maps, menu);
         return true;
     }
 
@@ -48,6 +48,7 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
             return true;
         }
 
