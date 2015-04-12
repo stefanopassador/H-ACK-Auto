@@ -10,6 +10,7 @@ import android.widget.EditText;
 import it.spassador.bluetime.CommonUtilities;
 import it.spassador.bluetime.Database.DatabaseAdapter;
 import it.spassador.bluetime.R;
+import it.spassador.bluetime.TDA.Task;
 import it.spassador.bluetime.TDA.Todo;
 import it.spassador.bluetime.TDA.TodoTask;
 
@@ -31,12 +32,12 @@ public class ModifyTodoTask extends ActionBarActivity {
 
         Bundle bundle = getIntent().getExtras();
         int id = bundle.getInt(CommonUtilities.TODO_TASK_ID);
-        boolean isTodo = bundle.getString(CommonUtilities.TODO_TASK).equalsIgnoreCase("task");
+        boolean isTodo = bundle.getString(CommonUtilities.TODO_TASK).equalsIgnoreCase("todo");
 
         DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
         db.open();
         Cursor cursor;
-        TodoTask todoTask = new TodoTask();
+        TodoTask todoTask;
         if (isTodo) {
             cursor = db.fetchTodo(id);
             cursor.moveToFirst();
@@ -45,7 +46,7 @@ public class ModifyTodoTask extends ActionBarActivity {
         } else {
             cursor = db.fetchTask(id);
             cursor.moveToFirst();
-            todoTask = new Todo(cursor);
+            todoTask = new Task(cursor);
             cursor.close();
         }
         db.close();

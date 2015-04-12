@@ -42,7 +42,11 @@ public class TodoTaskAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ModifyTodoTask.class);
-                intent.putExtra(CommonUtilities.TODO_TASK, arrayList.get(pos) instanceof Todo ? "todo" : "task");
+                if ( arrayList.get(pos).getType() == 1) {
+                    intent.putExtra(CommonUtilities.TODO_TASK, "todo");
+                } else if (arrayList.get(pos).getType() == 2) {
+                    intent.putExtra(CommonUtilities.TODO_TASK, "task");
+                }
                 intent.putExtra(CommonUtilities.TODO_TASK_ID, arrayList.get(pos).getId());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
