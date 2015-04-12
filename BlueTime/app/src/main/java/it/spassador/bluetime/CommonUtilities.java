@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
  * Created by stefanopassador on 11/04/15.
  */
 public class CommonUtilities {
+    public static final String TODO_TASK_ID = "todo_task_id";
     public static final String TODO_TASK = "todo_or_task";
 
     public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,

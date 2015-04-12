@@ -5,4 +5,20 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_to_do_task">ToDoTaskActivity</string>
+    <string name="ok">Navigate</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_modify_todo_task">ModifyTodoTask</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="title_activity_likes">LikesActivity</string>
+
+    <array name="likes">
+        <item>Cinema</item>
+        <item>Pub</item>
+        <item>Ristorante cinese</item>
+        <item>Musei</item>
+    </array>
+    <string name="title_activity_profile">Profile</string>
 </resources>

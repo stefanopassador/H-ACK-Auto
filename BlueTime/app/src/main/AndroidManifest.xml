@@ -29,10 +29,34 @@
         <activity
             android:name=".Activities.MapsActivity"
             android:label="@string/title_activity_maps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.spassador.bluetime.Activities.MainActivity" />
         </activity>
         <activity
             android:name=".Activities.ToDoTaskActivity"
             android:label="@string/title_activity_to_do_task" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.spassador.bluetime.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.ModifyTodoTask"
+            android:label="@string/title_activity_modify_todo_task" >
+        </activity>
+        <activity
+            android:name=".Activities.LikesActivity"
+            android:label="@string/title_activity_likes" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.spassador.bluetime.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:label="@string/title_activity_profile" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.spassador.bluetime.Activities.MainActivity" />
         </activity>
     </application>
 

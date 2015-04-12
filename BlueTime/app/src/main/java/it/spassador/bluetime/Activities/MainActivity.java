@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
@@ -27,7 +28,7 @@ import it.spassador.bluetime.TDA.TodoTask;
 
 public class MainActivity extends ActionBarActivity {
     GridView mGridView;
-    ImageButton mImageButton;
+    ImageView mImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,8 @@ public class MainActivity extends ActionBarActivity {
         arrayImages.add(CommonUtilities.decodeSampledBitmapFromResource(getApplicationContext().getResources(), R.drawable.ic_profile, 200, 200));
         mGridView = (GridView) findViewById(R.id.gridView);
         mGridView.setAdapter(new GridViewAdapter(MainActivity.this, R.layout.row_grid_view, arrayImages));
-        mImageButton = (ImageButton) findViewById(R.id.imageButton);
+        // TODO da sistemare il layout del mImageButton -> l'immagine deve apparire giusta
+        mImageButton = (ImageView) findViewById(R.id.imageButton);
         mImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +65,14 @@ public class MainActivity extends ActionBarActivity {
                         Intent intent2 = new Intent(getApplicationContext(), ToDoTaskActivity.class);
                         intent2.putExtra(CommonUtilities.TODO_TASK, "task");
                         startActivity(intent2);
+                        break;
+                    case 2:
+                        Intent intent3 = new Intent(getApplicationContext(), LikesActivity.class);
+                        startActivity(intent3);
+                        break;
+                    case 3:
+                        Intent intent4 = new Intent(getApplicationContext(), ProfileActivity.class);
+                        startActivity(intent4);
                         break;
                     default:
                         break;
@@ -107,10 +117,7 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }
