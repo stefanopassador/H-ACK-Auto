@@ -32,7 +32,7 @@ public class DatabaseAdapter {
     }
 
     private ContentValues createContentValuesTodo(String title, String description,
-                                                         Double latitude, Double longitude) {
+                                                  Double latitude, Double longitude) {
         ContentValues values = new ContentValues();
         values.put(Database.TODO_TITLE, title);
         values.put(Database.TODO_DESCRIPTION, description);

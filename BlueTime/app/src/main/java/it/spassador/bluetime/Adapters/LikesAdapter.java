@@ -2,6 +2,7 @@ package it.spassador.bluetime.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import it.spassador.bluetime.Activities.ModifyTodoTask;
-import it.spassador.bluetime.CommonUtilities;
 import it.spassador.bluetime.R;
-import it.spassador.bluetime.TDA.Todo;
 
 /**
  * Created by stefanopassador on 12/04/15.
@@ -27,6 +25,7 @@ public class LikesAdapter extends BaseAdapter {
         this.context = context;
         this.array = array;
     }
+
     @Override
     public int getCount() {
         return array.size();
@@ -51,9 +50,14 @@ public class LikesAdapter extends BaseAdapter {
         RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.relative_layout_row_likes);
         TextView title = (TextView) view.findViewById(R.id.textViewLikes);
         title.setText(array.get(i));
+        final String t = array.get(i);
         mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + t);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                context.startActivity(mapIntent);
 
             }
         });

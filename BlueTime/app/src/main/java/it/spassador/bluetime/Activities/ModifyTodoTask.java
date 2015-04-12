@@ -1,14 +1,13 @@
 package it.spassador.bluetime.Activities;
 
 import android.database.Cursor;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
 import it.spassador.bluetime.CommonUtilities;
-import it.spassador.bluetime.Database.Database;
 import it.spassador.bluetime.Database.DatabaseAdapter;
 import it.spassador.bluetime.R;
 import it.spassador.bluetime.TDA.Todo;

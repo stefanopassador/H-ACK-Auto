@@ -1,21 +1,21 @@
 package it.spassador.bluetime.Activities;
 
 import android.database.Cursor;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import it.spassador.bluetime.Adapters.TodoTaskAdapter;
 import it.spassador.bluetime.CommonUtilities;
 import it.spassador.bluetime.Database.DatabaseAdapter;
 import it.spassador.bluetime.R;
 import it.spassador.bluetime.TDA.Task;
 import it.spassador.bluetime.TDA.Todo;
 import it.spassador.bluetime.TDA.TodoTask;
-import it.spassador.bluetime.Adapters.TodoTaskAdapter;
 
 
 public class ToDoTaskActivity extends ActionBarActivity {

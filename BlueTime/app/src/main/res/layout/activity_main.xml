@@ -11,14 +11,15 @@
     tools:ignore="ContentDescription">
 
     <ImageView
-        android:id="@+id/image"
+
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/ic_map_button"
+        android:id="@+id/icon_time"
         android:configChanges="orientation"
-        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center_horizontal"
         android:gravity="center" />
+
 
     <GridView
         android:id="@+id/gridView"
@@ -32,18 +33,17 @@
         android:verticalSpacing="10dp" />
 
 
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:configChanges="orientation"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center"
+        android:scaleType="fitXY"
 
-
-        <ImageView
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@drawable/ic_map_button"
-            android:configChanges="orientation"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:gravity="center"
-             />
+        />
 
 
 </LinearLayout>
