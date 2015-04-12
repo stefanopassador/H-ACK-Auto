@@ -15,4 +15,9 @@ public class Todo extends TodoTask {
         this.latitude = cursor.getDouble(cursor.getColumnIndex(Database.TODO_LATITUDE));
         this.longitude = cursor.getDouble(cursor.getColumnIndex(Database.TODO_LONGITUDE));
     }
+
+    public int getType() {
+        return 1;
+    }
+
 }

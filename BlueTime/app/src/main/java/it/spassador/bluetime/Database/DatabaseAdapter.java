@@ -87,8 +87,8 @@ public class DatabaseAdapter {
 
     //fetch all to_do
     public Cursor fetchTask(int id) {
-        return database.query(Database.TODO_TABLE, new String[]{Database.TODO_ID, Database.TODO_TITLE,
-                Database.TODO_DESCRIPTION, Database.TODO_LATITUDE, Database.TODO_LONGITUDE}, Database.TASK_ID + " = " + id, null, null, null, null);
+        return database.query(Database.TASK_TABLE, new String[]{Database.TASK_ID, Database.TASK_TITLE,
+                Database.TASK_DESCRIPTION, Database.TASK_LATITUDE, Database.TASK_LONGITUDE}, Database.TASK_ID + " = " + id, null, null, null, null);
     }
 
     //fetch all to_do
