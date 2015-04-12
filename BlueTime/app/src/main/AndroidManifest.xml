@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
@@ -57,6 +57,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.spassador.bluetime.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.ChallengeActivity"
+            android:label="@string/title_activity_challenge" >
         </activity>
     </application>
 

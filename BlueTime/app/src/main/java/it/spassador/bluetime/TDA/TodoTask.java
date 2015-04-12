@@ -57,4 +57,9 @@ public class TodoTask {
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
+
+    public int getType() {
+        return 0;
+    }
+
 }

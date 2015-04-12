@@ -40,6 +40,7 @@ public class ToDoTaskActivity extends ActionBarActivity {
         DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
         db.open();
         if (isTodo) {
+            setTitle("Todo");
             Cursor cursor = db.fetchAllTodo();
             TodoTask todoTask;
             while (cursor.moveToNext()) {
@@ -47,6 +48,7 @@ public class ToDoTaskActivity extends ActionBarActivity {
                 arrayList.add(todoTask);
             }
         } else {
+            setTitle("Task");
             Cursor cursor = db.fetchAllTask();
             TodoTask todoTask;
             while (cursor.moveToNext()) {
